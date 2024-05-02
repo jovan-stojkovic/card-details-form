@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+$Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+$Red: hsl(0, 100%, 66%);
+$White: hsl(0, 0%, 100%);
+$Light-grayish-violet: hsl(270, 3%, 87%);
+$Dark-grayish-violet: hsl(279, 6%, 55%);
+$Very-dark-violet: hsl(278, 68%, 11%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .left {
+    height: 100vh;
+    width: 35%;
+    background-image: url("public/bg-main-desktop.png");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    .card {
+      height: 245px;
+      width: 447px;
+      border-radius: 10px;
+      position: absolute;
+      background-size: cover;
+      background-position: center;
+      padding: 30px;
+      color: $Light-grayish-violet;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      letter-spacing: 2px;
+
+      &.front {
+        top: 20%;
+        right: -30%;
+        background-image: url("public/bg-card-front.png");
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: space-between;
+
+        .logo {
+          width: 70px;
+          height: 40px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-image: url("public/card-logo.svg");
+        }
+
+        p.card-number {
+          font-size: 31px;
+          margin-bottom: -40px;
+        }
+
+        .front-info {
+          display: flex;
+          align-content: center;
+          justify-content: space-between;
+          width: 100%;
+
+          p.name {
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      &.back {
+        background-image: url("public/bg-card-back.png");
+        top: 53%;
+        right: -50%;
+        position: absolute;
+
+        p.cvc {
+          position: absolute;
+          right: 50px;
+          top: 108px;
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  form {
+    height: 450px;
+    width: 450px;
+    margin-left: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+
+    .div {
+      width: 100%;
+    }
+
+    input {
+      all: unset;
+      width: calc(100% - 22px);
+      height: 50px;
+      border-radius: 8px;
+      border: 2px solid $Light-grayish-violet;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+        rgba(0, 0, 0, 0.24) 0px 1px 2px;
+      padding: 0 10px;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+          rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      }
+
+      &:focus {
+        border: 2px solid hsl(278, 94%, 30%);
+      }
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      .bottom-left {
+        width: 50%;
+        div.date {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 15px;
+
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    label {
+      color: $Very-dark-violet;
+      font-size: 14px;
+    }
+
+    button {
+      all: unset;
+      height: 50px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      background-color: $Very-dark-violet;
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .error {
+      color: red;
+      width: 100%;
+      height: 20px;
+      font-size: 10px;
+    }
+  }
+}
